@@ -1,0 +1,14 @@
+name: Log Test Workflow
+
+on: [push]
+
+jobs:
+  log-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Log a message
+      run: echo "This is a test log message"
