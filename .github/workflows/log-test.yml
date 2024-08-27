@@ -18,12 +18,6 @@ jobs:
         echo "Log entry 4: Uploading log file as artifact" >> test-log.txt
         echo "Log entry 5: Workflow completed" >> test-log.txt
 
-    - name: Upload log file as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-log
-        path: test-log.txt
-
     # Testing section for GITHUB_TOKEN
     - name: Use GITHUB_TOKEN
       env:
@@ -43,10 +37,16 @@ jobs:
     # New log entry for artifact content
     - name: Log artifact content
       run: |
-        echo "Log entry 6: Artifact content: GITHUB_TOKEN" >> test-log.txt
+        echo "Log entry 6: Artifact content:" >> test-log.txt
         cat test-log.txt >> test-log.txt
-        echo "Log entry 7: Artifact content logged: ACTIONS_RUNTIME_TOKEN" >> test-log.txt
+        echo "Log entry 7: Artifact content logged" >> test-log.txt
 
     # Display updated log file contents
     - name: Display updated log file contents
       run: cat test-log.txt
+
+    - name: Upload log file as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-log
+        path: test-log.txt
