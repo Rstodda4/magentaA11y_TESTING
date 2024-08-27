@@ -1,14 +1,20 @@
-name: Log Test Workflow
+name: Log Artifact Workflow
 
 on: [push]
 
 jobs:
-  log-test:
+  log-artifact:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Log a message
-      run: echo "This is a test log message"
+    - name: Create log file
+      run: echo "This is a test log message" > test-log.txt
+
+    - name: Upload log file as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-log
+        path: test-log.txt
