@@ -23,3 +23,15 @@ jobs:
       with:
         name: test-log
         path: test-log.txt
+
+    # Testing section for GITHUB_TOKEN
+    - name: Use GITHUB_TOKEN
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: echo "Using GITHUB_TOKEN for testing"
+
+    # Testing section for ACTIONS_RUNTIME_TOKEN
+    - name: Use ACTIONS_RUNTIME_TOKEN
+      env:
+        ACTIONS_RUNTIME_TOKEN: ${{ secrets.ACTIONS_RUNTIME_TOKEN }}
+      run: echo "Using ACTIONS_RUNTIME_TOKEN for testing"
