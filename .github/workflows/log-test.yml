@@ -30,10 +30,6 @@ jobs:
         ACTIONS_RUNTIME_TOKEN: ${{ secrets.ACTIONS_RUNTIME_TOKEN }}
       run: echo "Using ACTIONS_RUNTIME_TOKEN for testing"
 
-    # Display log file contents
-    - name: Display log file contents
-      run: cat test-log.txt
-
     # New log entry for artifact content
     - name: Log artifact content
       run: |
