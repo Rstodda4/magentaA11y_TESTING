@@ -34,12 +34,7 @@ jobs:
     - name: Log artifact content
       run: |
         echo "Log entry 6: Artifact content:" >> test-log.txt
-        cat test-log.txt >> test-log.txt
         echo "Log entry 7: Artifact content logged" >> test-log.txt
-
-    # Display updated log file contents
-    - name: Display updated log file contents
-      run: cat test-log.txt
 
     - name: Upload log file as artifact
       uses: actions/upload-artifact@v3
