@@ -11,7 +11,12 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Create log file
-      run: echo "This is a test log message" > test-log.txt
+      run: |
+        echo "Log entry 1: Workflow started" > test-log.txt
+        echo "Log entry 2: Checking out repository" >> test-log.txt
+        echo "Log entry 3: Creating log file" >> test-log.txt
+        echo "Log entry 4: Uploading log file as artifact" >> test-log.txt
+        echo "Log entry 5: Workflow completed" >> test-log.txt
 
     - name: Upload log file as artifact
       uses: actions/upload-artifact@v3
