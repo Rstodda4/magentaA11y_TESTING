@@ -27,7 +27,7 @@ jobs:
     # Testing section for GITHUB_TOKEN
     - name: Use GITHUB_TOKEN
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: echo "Using GITHUB_TOKEN for testing"
 
     # Testing section for ACTIONS_RUNTIME_TOKEN
